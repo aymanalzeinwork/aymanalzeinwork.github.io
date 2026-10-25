@@ -13,7 +13,7 @@
   --mono: Consolas, "Courier New", monospace;
   --sans: "Segoe UI", Arial, sans-serif;
   --display: "Segoe UI", Arial, sans-serif;
-  --page-width: 1200px;
+  --page-width: 1360px;
 }
 
 * { box-sizing: border-box; }
@@ -299,9 +299,8 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -.055em; }
 .article-facts strong { font-size: 0.75rem; font-weight: 600; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .tag-list li { padding: 5px 9px; border: 1px solid var(--line); color: var(--muted); font: 0.5625rem var(--mono); }
-.article-hero-image { width: 100%; max-height: 560px; margin: 0; overflow: hidden; background: #dce0d8; }
-.article-hero-image img { width: 100%; max-height: 525px; object-fit: cover; object-position: center 48%; }
-[data-page="autobike"] .article-hero-image img { object-position: center 80%; }
+.article-hero-image { width: min(var(--page-width), calc(100% - 96px)); margin: 0 auto; }
+.article-hero-image img { width: 100%; height: auto; object-fit: contain; }
 .article-hero-image figcaption { width: min(var(--page-width), calc(100% - 96px)); margin: auto; padding-block: 9px 14px; color: var(--muted); font: 0.5625rem var(--mono); }
 .article-content { display: grid; grid-template-columns: .68fr 1.32fr; gap: 0 9%; padding-top: 68px; }
 .article-lede { grid-column: 1; grid-row: 1 / span 2; }
@@ -388,6 +387,7 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -.055em; }
   .hero-visual { padding-right: 12px; }
   .hero-stamp { right: -7px; }
   .article-content { grid-template-columns: .52fr 1.48fr; gap: 0 6%; }
+  .article-hero-image { width: min(var(--page-width), calc(100% - 56px)); }
   .article-hero-image figcaption { width: calc(100% - 56px); }
   .footer-inner { width: calc(100% - 48px); }
 }
@@ -464,7 +464,7 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -.055em; }
   .article-intro h1 { font-size: clamp(2.625rem, 12.65vw, 3.8125rem); }
   .article-deck { font-size: 0.9375rem; }
   .article-side { padding-top: 7px; }
-  .article-hero-image img { max-height: 330px; }
+  .article-hero-image { width: calc(100% - 40px); }
   .article-hero-image figcaption { width: calc(100% - 40px); }
   .article-content { grid-template-columns: 1fr; gap: 0; padding-top: 42px; }
   .article-lede { grid-column: 1; grid-row: auto; }
